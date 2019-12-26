@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { Image, Alert } from 'react-native';
 
-import logo from '~/assets/logo.png';
+import logo from '~/assets/gobarber.png';
 import Background from '~/components/Background';
 import { signUpRequest } from '~/store/modules/auth/actions';
 import validacao from '../../util';

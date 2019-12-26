@@ -18,6 +18,16 @@ import Confirm from './pages/New/Confirm';
 import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
 
+import Home from './pages/Home';
+import Barber from './pages/Barber';
+import Services from './pages/Services';
+import Notifications from './pages/Notifications';
+import Help from './pages/Help';
+import Pictures from './pages/Pictures';
+import Map from './pages/Map';
+import Team from './pages/Team';
+import Social from './pages/Social';
+
 export default (isSigned = false) =>
   createAppContainer(
     createSwitchNavigator(
@@ -28,6 +38,33 @@ export default (isSigned = false) =>
         }),
         App: createBottomTabNavigator(
           {
+            Home: {
+              screen: createStackNavigator(
+                {
+                  Home,
+                  Barber,
+                  Help,
+                  Notifications,
+                  Services,
+				  Pictures,
+				  Map,
+				  Team,
+				  Social
+                },
+                {
+                  defaultNavigationOptions: {
+                    header: null,
+                  },
+                }
+              ),
+              navigationOptions: {
+                tabBarVisible: true,
+                tabBarLabel: 'Home',
+                tabBarIcon: (
+                  <Icon name="home" size={20} color="rgba(255,255,255,0.6)" />
+                ),
+              },
+            },
             Dashboard,
             New: {
               screen: createStackNavigator(
@@ -67,7 +104,7 @@ export default (isSigned = false) =>
               activeTintColor: '#FFF',
               inactiveTintColor: 'rgba(255, 255, 255, 0.6)',
               style: {
-                backgroundColor: '#8d41a8',
+                backgroundColor: '#000000',
               },
             },
           }

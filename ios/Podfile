@@ -32,6 +32,14 @@ target 'go_barber_mobile' do
 
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
+  pod 'react-native-webview', :path => '../node_modules/react-native-webview'
+
+  pod 'react-native-video', :path => '../node_modules/react-native-video'
+
+  pod 'RNFS', :path => '../node_modules/react-native-fs'
+
+  pod 'react-native-viewpager', :path => '../node_modules/@react-native-community/viewpager'
+
   target 'go_barber_mobileTests' do
     inherit! :search_paths
     # Pods for testing

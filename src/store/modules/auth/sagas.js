@@ -44,6 +44,17 @@ export function* signUp({ payload }) {
       email,
       password,
     });
+	
+	const response = yield call(api.post, 'sessions', {
+      email,
+      password,
+    });
+
+    const { token, user } = response.data;
+	api.defaults.headers.Authorization = `Bearer ${token}`;
+	yield delay(1000);
+    yield put(signInSuccess(token, user));
+	
   } catch (err) {
     Alert.alert(
       'Erro no cadastro',

@@ -14,3 +14,8 @@ export function navigate(routeName, params) {
     })
   );
 }
+
+export function back() {
+  navigator.dispatch(NavigationActions.back());
+}
+
